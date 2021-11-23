@@ -1,10 +1,15 @@
 package com.bridgelabz.employeepayroll.Employee_Payroll_Service_Junit;
 
-public class EmployeePayRollMain {
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class EmployeePayrollMain {
+
 	public static void main(String[] args) {
-		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
-		System.out.println("Welcolme to employee payRoll");
-		employeePayrollService.readEmployeeDataFromConsole();
-		employeePayrollService.writeEmployeeDataInConsole();
+		ArrayList<EmployeePayRollData> employeePayrollDataList = new ArrayList<>();
+		EmployeePayRollImpl employeePayrollImpl = new EmployeePayRollImpl(employeePayrollDataList);
+		Scanner consoleInputReader = new Scanner(System.in);
+		employeePayrollImpl.readEmployeePayrollData(consoleInputReader);
+		employeePayrollImpl.writeEmployeePayrollData();
 	}
 }
