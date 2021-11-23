@@ -45,13 +45,10 @@ public class EmployeePayRollImpl {
 		}
 	}
 
-	// method to create file if file doesn't exist
 	private void checkFile() {
 		File file = new File(FILE_PATH);
 		try {
-			// checking file already exists
 			if (!file.exists()) {
-				// if not creating a new file
 				file.createNewFile();
 				System.out.println("Created a file at " + FILE_PATH);
 			}
@@ -68,5 +65,13 @@ public class EmployeePayRollImpl {
 			e.printStackTrace();
 		}
 		return entries;
+	}
+
+	public void printData() {
+		try {
+			Files.lines(Paths.get(FILE_PATH)).forEach(System.out::println);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
