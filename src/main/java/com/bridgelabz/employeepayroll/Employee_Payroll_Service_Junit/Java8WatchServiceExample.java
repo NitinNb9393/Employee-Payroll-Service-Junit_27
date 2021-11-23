@@ -80,5 +80,4 @@ public class Java8WatchServiceExample {
 			}
 		}
 	}
-
 }

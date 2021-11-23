@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class EmployeePayrollTest {
+
 	@Test
 	public void given3EmployeesWhenWrittenToFileShouldMatchEmployeeEntries() {
 		EmployeePayRollImpl employeePayrollService = new EmployeePayRollImpl();
